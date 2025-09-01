@@ -208,11 +208,11 @@ latest_features = np.array(latest_features).reshape(1, -1)
 
 # Random Forest prediction
 next_day_pred_rf = rf.predict(latest_features)
-print(f"🌟 Random Forest Next Day Predicted Closing Price: ${next_day_pred_rf[0]:.2f}")
+print(f" Random Forest Next Day Predicted Closing Price: ${next_day_pred_rf[0]:.2f}")
 
 # Gradient Boosting prediction
 next_day_pred_gb = gb.predict(latest_features)
-print(f"🌟 Gradient Boosting Next Day Predicted Closing Price: ${next_day_pred_gb[0]:.2f}")
+print(f" Gradient Boosting Next Day Predicted Closing Price: ${next_day_pred_gb[0]:.2f}")
 
 !pip install streamlit
 !pip install pyngrok
@@ -232,7 +232,7 @@ joblib.dump(rf, 'rf_model.pkl')
 features_list = ['SMA20', 'SMA50', 'EMA20', 'EMA50', 'RSI', 'MACD', 'Upper_Band', 'Lower_Band', 'Sentiment']
 joblib.dump(features_list, 'features.pkl')
 
-print("✅ Model and features saved successfully!")
+print(" Model and features saved successfully!")
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
@@ -271,4 +271,4 @@ from pyngrok import ngrok
 
 # Public URL generate karo
 public_url = ngrok.connect(port=8501)
-print(f"🚀 Public URL: {public_url}")
+print(f" Public URL: {public_url}")
